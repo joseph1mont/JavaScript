@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+body {
+	background-color:#ffc;
+}																/* CSS Document and CSS3*/
+#apDiv1 {														/* dice1 */
+		box-shadow: 7px 7px 8px #818181;
+		-webkit-box-shadow: 7px 7px 8px #818181;
+		-moz-box-shadow: 7px 7px 8px #818181;
+	position:absolute;
+	left:1020px;
+	top:10px;
+	width:200px;
+	height:200px;
+	z-index:1;
+	background-image: url(../images/img_0.gif);
+}
+#apDiv2 {														/* dice2 */
+		box-shadow: 7px 7px 8px #818181;
+		-webkit-box-shadow: 7px 7px 8px #818181;
+		-moz-box-shadow: 7px 7px 8px #818181;
+	position:absolute;
+	left:1125px;
+	top:225px;
+	width:200px;
+	height:200px;
+	z-index:2;
+	background-image: url(../images/img_0.gif);
+}
+#rollButton {													/* roll buttom */
+		box-shadow: 7px 7px 8px #818181;						
+		-webkit-box-shadow: 7px 7px 8px #818181;
+		-moz-box-shadow: 7px 7px 8px #818181;
+	position:absolute;
+	left:1125px;
+	top:450px;
+	width:100px;
+	height:100px;
+	z-index:3;
+}
+#GameChoosenImg {												/* game choosen img */
+		box-shadow: 7px 7px 8px #818181;
+		-webkit-box-shadow: 7px 7px 8px #818181;
+		-moz-box-shadow: 7px 7px 8px #818181;
+	position:absolute;
+	left:309px;
+	top:200px;
+	width:200px;
+	height:200px;
+	z-index:4;
+	background-image:url(../images/mainPic.gif)
+}
+#Game1Img {														/* Pass Line img */
+		box-shadow: 7px 7px 8px #818181;
+		-webkit-box-shadow: 7px 7px 8px #818181;
+		-moz-box-shadow: 7px 7px 8px #818181;
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:200px;
+	height:200px;
+	z-index:5;
+	background-image:url(../images/PassLine.gif)
+}
+#Game2Img {														/* Field Bet img */
+		box-shadow: 7px 7px 8px #818181;
+		-webkit-box-shadow: 7px 7px 8px #818181;
+		-moz-box-shadow: 7px 7px 8px #818181;
+
+	position:absolute;
+	left:0px;
+	top:200px;
+	width:200px;
+	height:200px;
+	z-index:6;
+	background-image:url(../images/FieldBet.gif)
+}
+#Game3Img {														/* Any 7 img */
+		box-shadow: 7px 7px 8px #818181;
+		-webkit-box-shadow: 7px 7px 8px #818181;
+		-moz-box-shadow: 7px 7px 8px #818181;
+
+	position:absolute;
+	left:0px;
+	top:400px;
+	width:200px;
+	height:200px;
+	z-index:7;
+	background-image:url(../images/Any7.gif)	
+}
+#MessagesList {													/* messages change while user play*/
+		box-shadow: 7px 7px 8px #818181;
+		-webkit-box-shadow: 7px 7px 8px #818181;
+		-moz-box-shadow: 7px 7px 8px #818181;
+	
+	position:absolute;
+	left:550px;
+	top:240px;
+	width:400px;
+	height:225px;
+	z-index:8;
+	background-color: #CCCCFF;
+	overflow: scroll;
+}
+#GameChoosen {													/* the game name label */
+	background-color:#CCCCFF;
+	-moz-border-radius:0px 15px 0px 15px;
+	border-radius:0px 15px 0px 15px;
+	
+	position:absolute;
+	text-align:center;
+	font-size:40px;
+	font-family:"Times New Roman", Times, serif;
+	left:308px;
+	top:55px;
+	width:202px;
+	height:56px;
+	z-index:9;
+}
+#Controls {														/* the control pannel table */
+		box-shadow: 7px 7px 8px #818181;
+		-webkit-box-shadow: 7px 7px 8px #818181;
+		-moz-box-shadow: 7px 7px 8px #818181;
+	position:absolute;
+	left:550px;
+	top:480px;
+	width:400px;
+	height:85px;
+	z-index:10;
+}
+#Help {															/* List to descibe the game has choosen */
+	margin-top: 0px;
+	position:absolute;
+	left:550px;
+	top:0 px;
+	width:450px;
+	height:170px;
+	z-index:11;
+}

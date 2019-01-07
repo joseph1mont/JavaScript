@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>CRaps Game</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script src = "classes/PassLine.js" type="text/javascript"></script>		<!-- a class to control PASS LINE game -->
+<script type="text/javascript"><!--
+//-------------------------------------------------------
+	var oPassLine = new PassLine();
+--></script>		
+<script src = "classes/FieldBet.js" type="text/javascript"></script>		<!-- a class to control FIELD BET game-->
+<script type="text/javascript"><!--
+//-------------------------------------------------------
+	var oFieldBet = new FieldBet();
+--></script>	
+<script src = "classes/Any7.js" type="text/javascript"></script>			<!-- a class to control ANY 7 game-->
+<script type="text/javascript"><!--
+//-------------------------------------------------------
+	var oAny7 = new Any7();
+	--></script>	
+<script src = "classes/DiceValues.js" type="text/javascript"></script>		<!-- a class Rolling the dice and get the total-->
+<script type="text/javascript"><!--
+//-------------------------------------------------------
+	var oDiceValues = new DiceValues();
+	oDiceValues.pDice = 0;
+--></script>	
+<script src = "classes/Calculation.js" type="text/javascript"></script>		<!-- a class to initialize and chage Bank Roll and Bet fields-->		
+<script type="text/javascript"><!-- 
+	var oCalculation = new Calculation();
+--></script>
+
+<script src = "classes/GameChoosen.js" type="text/javascript"></script>		<!-- a class for the animation (moving the div) when select or reselect a game-->
+<script type="text/javascript"><!-- 
+	var oGameChoosen = new GameChoosen();
+	oGameChoosen.pGameChoosen = 0;			// When pGameChoosen property is 0, the user can not throw the dice and when is 1 the first game is choosen etc.....
+--></script>
+<script type="text/javascript"><!--    		// using the keyboard to select a game or throw the roll (no need the mouse in CRAPS game if user prefer that)
+function changeGameOrthrowTheRoll(e)
+{
+	var evtobj = window.event? event:e; // Delecting Safari / Chrome or Firefox
+	var unicode = evtobj.charCode;  //Getting unicode number of key pressed
+	var actualkey = String.fromCharCode(unicode);  // Converting to actual key pressed as a string
+	
+	if(actualkey == "r")					// roll the dice
+	{
+		oDiceValues.animate();
+	}
+	else if (actualkey == "a")				// select Pass Line as a new game
+	{
+		oPassLine.mStartPassLine();
+	}
+	else if (actualkey == "b")				// select Field Bet as a new game
+	{
+		oFieldBet.mStartFieldBet();
+	}
+	else if (actualkey == "c")				// select Any 7 as a new game
+	{
+		oAny7.mStartAny7()
+	}
+}
+document.onkeypress = changeGameOrthrowTheRoll;
+--></script>
+</head>
+
+<body onload="oCalculation.intialize()">						<!-- start CRAPS game with 0 values for BankRoll, Bet and Point-->
+<div id="apDiv1"></div>											<!-- dice 1 -->
+<div id="apDiv2"></div>											<!-- dice 2 -->
+<div id="Game1Img" onclick="oPassLine.mStartPassLine()"></div>	<!-- Pass Line image -->
+<div id="Game2Img" onclick="oFieldBet.mStartFieldBet()"></div>  <!-- Field Bet image -->
+<div id="Game3Img" onclick="oAny7.mStartAny7()"></div>			<!-- Any 7 image -->
+<div id="GameChoosenImg"></div>									<!-- Game choosen image -->
+
+<div id="MessagesList">											<!-- messages describe the current status (the dice total and if user win or lose)-->
+  <div align="center" id="messages"></div>
+</div>
+<div id="GameChoosen">CRAPS</div>
+
+<input type="button" value="Roll" onclick="oDiceValues.animate()" name="rollButton" id="rollButton"/>   <!-- roll Button -->
+<div id="Controls">
+	<form id="frm">
+	<table style="margin:auto" cellspacing="10" frame="border" id="myTable">							<!-- Control panel table-->
+		<tr>
+			<td align="right">BANK ROLL</td>
+			<td><input type="text" size="8" disabled="disabled" name="bankRoll" id="bankRoll" value=""/></td> 
+			<td align="right">YOUR BET</td>
+			<td><input type="text" size="8" disabled="disabled" name="bet" id="bet" value=""/></td>
+		</tr>
+		
+		<tr>
+			<td height="24" colspan="2" align="right">POINT</td>
+			<td colspan="2"><input type="text" size="8" disabled="disabled" name="point" id="point"/></td>
+		</tr>
+	</table>
+	</form>
+</div>															<!-- div that diplay a welcome message and explaine the game that user choose -->
+<div id="Help"><h2>Welcome to Craps game</h2>Choose your game by click the mouse one of three games on the left<br /><small><small>you cannot roll the dice right now</small></small><br />or press :<br />a : for PASS LINE game<br />b : for FIELD BET game<br />c : for ANY 7 game<br /><br />r : to roll the dice
+</div>
+</body>
+</html>
